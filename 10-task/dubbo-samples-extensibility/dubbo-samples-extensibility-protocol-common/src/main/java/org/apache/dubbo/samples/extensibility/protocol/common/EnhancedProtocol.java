@@ -30,7 +30,7 @@ import java.util.List;
 public class EnhancedProtocol implements Protocol {
 
     public EnhancedProtocol(FrameworkModel frameworkModel) {
-        this.protocol = new DubboProtocol(frameworkModel);
+        this.protocol = new DubboProtocol();
     }
 
     private final Protocol protocol;

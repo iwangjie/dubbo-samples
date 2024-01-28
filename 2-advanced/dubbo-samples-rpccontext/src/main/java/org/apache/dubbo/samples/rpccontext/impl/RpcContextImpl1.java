@@ -47,9 +47,9 @@ public class RpcContextImpl1 implements RpcContextService1 {
         RpcContextService2 greeterSayHi = bootstrap.getCache().get(ref);
         RpcContext.getClientAttachment().setObjectAttachment(RpcContextUtils.provider1_req_key, RpcContextUtils.provider1_req_key);
         Service2DTO service2DTO = greeterSayHi.sayHi();
-        String provider2Res = (String)RpcContext.getClientResponseContext().getObjectAttachment(RpcContextUtils.provider2_res_key);
+        String provider2Res = (String)RpcContext.getServerContext().getObjectAttachment(RpcContextUtils.provider2_res_key);
         System.out.println("get response from provider2："+ provider2Res);
-        RpcContext.getServerResponseContext().setObjectAttachment(RpcContextUtils.provider1_res_key, RpcContextUtils.provider1_res_key);
+        RpcContext.getServerContext().setObjectAttachment(RpcContextUtils.provider1_res_key, RpcContextUtils.provider1_res_key);
         service1DTO.setConsumerReq(consumerReq);
         service1DTO.setProvider2Res(provider2Res);
         service1DTO.setService2DTO(service2DTO);

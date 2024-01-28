@@ -49,7 +49,7 @@ public class RpcContextServiceIT {
         RpcContext.getClientAttachment().setAttachment(RpcContextUtils.consumer_req_key, RpcContextUtils.consumer_req_key);
         Service1DTO service1DTO = service.sayHello();
         Service2DTO service2DTO = service1DTO.getService2DTO();
-        String provider1Res = RpcContext.getClientResponseContext().getAttachment(RpcContextUtils.provider1_res_key);
+        String provider1Res = RpcContext.getServerContext().getAttachment(RpcContextUtils.provider1_res_key);
         Assert.assertEquals(RpcContextUtils.provider1_res_key, provider1Res);
 
         Assert.assertEquals(RpcContextUtils.consumer_req_key, service1DTO.getConsumerReq());
@@ -57,7 +57,7 @@ public class RpcContextServiceIT {
 
         Assert.assertEquals(RpcContextUtils.provider1_req_key, service2DTO.getProvider1Req());
 
-        String provider2Res = (String) RpcContext.getClientResponseContext().getObjectAttachment(RpcContextUtils.provider2_res_key);
+        String provider2Res = (String) RpcContext.getServerContext().getObjectAttachment(RpcContextUtils.provider2_res_key);
         Assert.assertEquals(null, provider2Res);
         Assert.assertEquals(RpcContextUtils.provider2_res_key, service1DTO.getProvider2Res());
     }

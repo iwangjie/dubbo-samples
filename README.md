@@ -2,6 +2,13 @@
 
 Samples for Apache Dubbo.
 
+> 版本
+> 
+> Dubbo 3.11
+> 
+> SpringBoot 2.3.1
+
+
 ![Build Status](https://github.com/apache/dubbo-samples/workflows/Dubbo%202/badge.svg)
 ![license](https://img.shields.io/github/license/apache/dubbo-samples.svg)
 
